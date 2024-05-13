@@ -1,0 +1,4 @@
+npm create refine-app@latest to setup refine project
+choose Vite, nestjs, custom , antd
+
+npm i
