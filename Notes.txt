@@ -1,0 +1,15 @@
+npm create refine-app@latest to setup refine project
+choose Vite, nestjs, custom , antd
+
+npm i
+
+refine needs providers
+it helps with data fetching, authentication, routing, notifications, real-time updates
+
+data provider gets data from server and helps with adding changing and deleting data
+provides data to entire app, any uquery to fetch data will be made under data provider
+handles caching and making sure everythign is upto date
+
+Live provider in refine
+allows app to update in real time
+
