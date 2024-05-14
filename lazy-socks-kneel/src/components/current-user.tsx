@@ -4,10 +4,15 @@ import React from 'react'
 const CurrentUser = () => {
     return (
         <>
-        <Popover>
+            <Popover
+                placement='bottomRight'
+                trigger="click"
+                overlayInnerStyle={{ padding: 0 }}
+                overlayStyle={{ zIndex: 99 }}
+            >
+                TEST
 
-            
-        </Popover>
+            </Popover>
         </>
     )
 }

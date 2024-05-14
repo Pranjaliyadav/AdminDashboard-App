@@ -1,6 +1,6 @@
 
 export const Home = () => {
   return (
-    <div>index</div>
+    <div>Home</div>
   )
 }
