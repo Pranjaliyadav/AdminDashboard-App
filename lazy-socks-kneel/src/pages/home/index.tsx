@@ -1,3 +1,4 @@
+import { DealsChart, UpcomingEvents } from "@/components"
 import { Col, Row } from "antd"
 
 export const Home = () => {
@@ -14,7 +15,7 @@ export const Home = () => {
           xl={8}
           style={{ height: '460px' }}
         >
-          CalenderUpcomingEvents
+          <UpcomingEvents/>
         </Col>
         <Col
           xs={24}  //total number of columns per row for diff screens
@@ -22,7 +23,7 @@ export const Home = () => {
           xl={8}
           style={{ height: '460px' }}
         >
-          DashboardDealsChart
+         <DealsChart/>
         </Col>
       </Row>
 
