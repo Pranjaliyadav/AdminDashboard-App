@@ -13,3 +13,12 @@ handles caching and making sure everythign is upto date
 Live provider in refine
 allows app to update in real time
 
+npm i -D typescript @graphql-codegen/cli
+additional imports
+npm i -D @graphql-codegen/cli @graphql-codegen/typescript @graphql-codegen/typescript-operations @graphql-codegen/import-types-preset prettier vite-tsconfig-paths
+-@graphql-codegen/cli: This package provides a command-line interface (CLI) for generating code from GraphQL schema and operations. It allows you to configure and run code generation tasks easily.
+-@graphql-codegen/typescript: This package is a plugin for GraphQL Code Generator, specifically for generating TypeScript types. It helps in automatically generating TypeScript types based on your GraphQL schema and operations, ensuring type safety in your GraphQL operations.
+-@graphql-codegen/typescript-operations: Another plugin for GraphQL Code Generator, this one is focused on generating TypeScript types for GraphQL operations (queries, mutations, subscriptions). It works in conjunction with the typescript plugin to provide comprehensive TypeScript support for GraphQL.
+-@graphql-codegen/import-types-preset: This is a preset package for GraphQL Code Generator. Presets are pre-configured sets of plugins that can be easily used together. This preset is configured to generate TypeScript types and imports, ensuring that all necessary types are imported correctly in the generated code.
+-prettier: Prettier is a code formatter that helps maintain consistent coding styles across your project. Integrating Prettier with your project ensures that your code is automatically formatted according to predefined rules, enhancing readability and maintainability.
+-vite-tsconfig-paths: Vite is a build tool for modern web projects, particularly for Vue.js applications. This package extends Vite's functionality by adding support for TypeScript path aliases defined in tsconfig.json. This makes it easier to manage module import paths, especially in larger projects.
