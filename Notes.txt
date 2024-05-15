@@ -22,3 +22,8 @@ npm i -D @graphql-codegen/cli @graphql-codegen/typescript @graphql-codegen/types
 -@graphql-codegen/import-types-preset: This is a preset package for GraphQL Code Generator. Presets are pre-configured sets of plugins that can be easily used together. This preset is configured to generate TypeScript types and imports, ensuring that all necessary types are imported correctly in the generated code.
 -prettier: Prettier is a code formatter that helps maintain consistent coding styles across your project. Integrating Prettier with your project ensures that your code is automatically formatted according to predefined rules, enhancing readability and maintainability.
 -vite-tsconfig-paths: Vite is a build tool for modern web projects, particularly for Vue.js applications. This package extends Vite's functionality by adding support for TypeScript path aliases defined in tsconfig.json. This makes it easier to manage module import paths, especially in larger projects.
+
+
+"codegen": "graphql-codegen"
+npm run codegen
+will create typescript types out of schema we give

@@ -2,7 +2,7 @@ import { Popover } from 'antd'
 import React from 'react'
 import { CustomAvatar } from './custom-avatar'
 import { useGetIdentity } from '@refinedev/core'
-import type { User} from '@/graphql/shcema.types'
+import type { User} from '@/graphql/schema.types'
 const CurrentUser = () => {
 
 const {data : user} = useGetIdentity<User>()
