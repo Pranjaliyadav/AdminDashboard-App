@@ -18,6 +18,7 @@ import { createClient } from "graphql-ws";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import { authProvider, dataProvider, liveProvider } from "./providers";
 import Layout from "./components/layout";
+import { resources } from "./config/resources";
 
 //URLs for GraphQL API and Websocket connection.  points to sever where GraphQL API is hosted, used for fetching and manipulating data
 const API_URL = "https://api.nestjs-query.refine.dev/graphql";
@@ -42,6 +43,7 @@ function App() {
             notificationProvider={useNotificationProvider}
             routerProvider={routerBindings}
             authProvider={authProvider}
+            resources={resources}
             options={{
               syncWithLocation: true,
               warnWhenUnsavedChanges: true,
