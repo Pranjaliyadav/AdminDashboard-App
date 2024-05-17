@@ -31,7 +31,7 @@ function App() {
   return (
     <BrowserRouter>
       {/* Displaying Github banner for displaying branding or lining to a repo */}
-      <GitHubBanner />
+      {/* <GitHubBanner /> */}
       {/* for usage of Antd components */}
       <AntdApp>
         {/* to provide development tools and feature */}
