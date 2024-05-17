@@ -19,6 +19,7 @@ import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import { authProvider, dataProvider, liveProvider } from "./providers";
 import Layout from "./components/layout";
 import { resources } from "./config/resources";
+import CompanyListPage from "./pages/CompanyList";
 
 //URLs for GraphQL API and Websocket connection.  points to sever where GraphQL API is hosted, used for fetching and manipulating data
 const API_URL = "https://api.nestjs-query.refine.dev/graphql";
@@ -31,7 +32,7 @@ function App() {
   return (
     <BrowserRouter>
       {/* Displaying Github banner for displaying branding or lining to a repo */}
-      <GitHubBanner />
+      {/* <GitHubBanner /> */}
       {/* for usage of Antd components */}
       <AntdApp>
         {/* to provide development tools and feature */}
@@ -55,7 +56,8 @@ function App() {
             {/* For definign app routes */}
             <Routes>
 
-
+{/* 
+              <Route index path="/home" element={<Home />} /> */}
               <Route path="/register" element={<Register />} />
               <Route path="/forgotPassword" element={<ForgotPassword />} />
               <Route path="/login" element={<Login />} />
@@ -63,12 +65,13 @@ function App() {
                 // If not authenticated, fall back to CatchAllNavigate else show layout shouwing outlet
                 element={<Authenticated
                   key="authenticated-layout"
-                  fallback={<CatchAllNavigate to="/login" />}
+                 // fallback={<CatchAllNavigate to="/login" />}
                 > <Layout>
                     <Outlet />
                   </Layout></Authenticated>}
               >
                 <Route index element={<Home />} />
+                <Route path="/companies" element = {<CompanyListPage/>} />
               </Route>
             </Routes>
             {/* to provide keyboard driver interface for navigation and other actions  */}
