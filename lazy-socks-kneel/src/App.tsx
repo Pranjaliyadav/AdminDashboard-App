@@ -19,6 +19,7 @@ import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import { authProvider, dataProvider, liveProvider } from "./providers";
 import Layout from "./components/layout";
 import { resources } from "./config/resources";
+import CompanyListPage from "./pages/CompanyList";
 
 //URLs for GraphQL API and Websocket connection.  points to sever where GraphQL API is hosted, used for fetching and manipulating data
 const API_URL = "https://api.nestjs-query.refine.dev/graphql";
@@ -70,6 +71,7 @@ function App() {
                   </Layout></Authenticated>}
               >
                 <Route index element={<Home />} />
+                <Route path="/companies" element = {<CompanyListPage/>} />
               </Route>
             </Routes>
             {/* to provide keyboard driver interface for navigation and other actions  */}
