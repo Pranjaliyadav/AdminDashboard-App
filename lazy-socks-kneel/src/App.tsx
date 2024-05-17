@@ -55,8 +55,8 @@ function App() {
             {/* For definign app routes */}
             <Routes>
 
-
-              <Route index path="/home" element={<Home />} />
+{/* 
+              <Route index path="/home" element={<Home />} /> */}
               <Route path="/register" element={<Register />} />
               <Route path="/forgotPassword" element={<ForgotPassword />} />
               <Route path="/login" element={<Login />} />
