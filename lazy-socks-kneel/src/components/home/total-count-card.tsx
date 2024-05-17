@@ -79,7 +79,7 @@ const DashboardTotalCountCard = ({
                         marginLeft:
                             '8px'
                     }}
-                ></Text>
+                >{title}</Text>
             </div>
             <div
                 style={{ display: 'flex', justifyContent: 'space-between' }}
