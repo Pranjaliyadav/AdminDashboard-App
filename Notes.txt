@@ -29,3 +29,5 @@ npm run codegen
 will create typescript types out of schema we give
 
 -The useList hook in refine helps streamline the process of retrieving, paginating, and managing lists of items, which is a common requirement in admin panels, dashboards, and similar applications.
+
+npm install @ant-design/plots for using graphical plots
