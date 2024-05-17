@@ -104,7 +104,8 @@ const CompanyListPage = () => {
                     render={(value) => {
                         return (
                             <Space>
-                               <EditButton hiede/>
+                              <EditButton hideText size = "small" recordItemId={value} />
+                              <DeleteButton hideText size = "small" recordItemId={value} />
                             </Space>
                         )
                     }}
