@@ -56,6 +56,7 @@ function App() {
             <Routes>
 
 
+              <Route index path="/home" element={<Home />} />
               <Route path="/register" element={<Register />} />
               <Route path="/forgotPassword" element={<ForgotPassword />} />
               <Route path="/login" element={<Login />} />
@@ -63,7 +64,7 @@ function App() {
                 // If not authenticated, fall back to CatchAllNavigate else show layout shouwing outlet
                 element={<Authenticated
                   key="authenticated-layout"
-                  fallback={<CatchAllNavigate to="/login" />}
+                 // fallback={<CatchAllNavigate to="/login" />}
                 > <Layout>
                     <Outlet />
                   </Layout></Authenticated>}
