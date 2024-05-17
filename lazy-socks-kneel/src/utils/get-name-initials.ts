@@ -1,7 +1,5 @@
 export const getNameInitials = (name: string, count = 2) => {
-  console.log(
-    "here name", name
-  )
+  
   const initials = name
     .split(" ")
     .map((n) => n[0])
