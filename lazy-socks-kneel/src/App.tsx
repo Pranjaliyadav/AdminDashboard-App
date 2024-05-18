@@ -23,7 +23,7 @@ import CompanyListPage from "./pages/CompanyList/list";
 import CreateTask from "./pages/CompanyList/create";
 import EditCompany from "./pages/CompanyList/edit";
 import TasksList from "./pages/Tasks/list";
-import TasksCreatePage from "./pages/Tasks/create";
+import { TasksCreatePage } from "./pages/Tasks/create";
 import CreateCompany from "./pages/CompanyList/create";
 import TasksEditPage from "./pages/Tasks/edit";
 
