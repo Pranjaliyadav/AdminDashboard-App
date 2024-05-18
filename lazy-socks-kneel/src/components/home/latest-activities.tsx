@@ -35,7 +35,7 @@ const LatestActivities = () => {
     const isLoading = isLoadingAudit || isLoadingDeals
     if (isError) {
         console.log(error)
-        return error
+        return <div>Error occurred: {error.message}</div>;
     }
 
     return (
