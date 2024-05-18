@@ -9,6 +9,7 @@ import { MenuProps } from 'antd'
 import dayjs from 'dayjs'
 import React, { memo, useMemo } from 'react'
 import CustomAvatar from '@/components/custom-avatar'
+import { useDelete, useNavigation } from '@refinedev/core'
 
 type ProjectCardProps = {
     id: string,
@@ -26,9 +27,9 @@ const ProjectCard = ({ id, title, dueDate, users }: ProjectCardProps) => {
 
     const { token } = theme.useToken()
 
-    const editFn = () => {
+    const { edit } = useNavigation()
 
-    }
+    const { mutate: deleteMutate } = useDelete()
 
     const dropDownItems = useMemo(() => {
         const dropdownItemsHelper: MenuProps['items'] = [
@@ -37,14 +38,23 @@ const ProjectCard = ({ id, title, dueDate, users }: ProjectCardProps) => {
                 key: '1',
                 icon: <EyeOutlined />,
                 onClick: () => {
-                    editFn()
+                    edit('tasks', id, 'replace')
                 }
             },
             {
                 danger: true,
                 label: 'Delete card',
                 key: '2',
-                onClick: () => { },
+                onClick: () => {
+                    deleteMutate({
+                        resource: 'tasks',
+                        id,
+                        meta: {
+                            operation: 'task'
+                        }
+                    }
+                    )
+                },
                 icon: <DeleteOutlined />
             }
         ]
@@ -83,7 +93,7 @@ const ProjectCard = ({ id, title, dueDate, users }: ProjectCardProps) => {
                 title={<Text
                     ellipsis={{ tooltip: title }}
                 >{title}</Text>}
-                onClick={() => editFn()}
+                onClick={() => edit()}
                 extra={
                     <Dropdown
                         trigger={["click"]}
@@ -181,7 +191,7 @@ const ProjectCard = ({ id, title, dueDate, users }: ProjectCardProps) => {
 export default ProjectCard
 
 //we are memoising ProjectCard compoennt
-export const ProjectCardMemo = memo(ProjectCard, (prev,next)=>{
+export const ProjectCardMemo = memo(ProjectCard, (prev, next) => {
     return (
         prev.id === next.id &&
         prev.title === next.title &&
