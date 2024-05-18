@@ -2,7 +2,7 @@ import { Authenticated, GitHubBanner, Refine, WelcomePage } from "@refinedev/cor
 import { DevtoolsPanel, DevtoolsProvider } from "@refinedev/devtools";
 import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
 import { Home, ForgotPassword, Login, Register } from "./pages"
-import { useNotificationProvider } from "@refinedev/antd";
+import { Create, useNotificationProvider } from "@refinedev/antd";
 import "@refinedev/antd/dist/reset.css";
 
 import {
@@ -21,6 +21,7 @@ import Layout from "./components/layout";
 import { resources } from "./config/resources";
 import CompanyListPage from "./pages/CompanyList/list";
 import CreateTask from "./pages/CompanyList/create";
+import EditCompany from "./pages/CompanyList/edit";
 
 //URLs for GraphQL API and Websocket connection.  points to sever where GraphQL API is hosted, used for fetching and manipulating data
 const API_URL = "https://api.nestjs-query.refine.dev/graphql";
@@ -75,6 +76,7 @@ function App() {
                 <Route path="/companies" >
                   <Route index element={<CompanyListPage/>}/>
                   <Route element={<CreateTask/>} path="new" />
+                  <Route path="edit/:id" element={<EditCompany/>}/>
 
                   </Route>
               </Route>
