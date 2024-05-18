@@ -23,6 +23,9 @@ import CompanyListPage from "./pages/CompanyList/list";
 import CreateTask from "./pages/CompanyList/create";
 import EditCompany from "./pages/CompanyList/edit";
 import TasksList from "./pages/Tasks/list";
+import TasksCreatePage from "./pages/Tasks/create";
+import CreateCompany from "./pages/CompanyList/create";
+import TasksEditPage from "./pages/Tasks/edit";
 
 //URLs for GraphQL API and Websocket connection.  points to sever where GraphQL API is hosted, used for fetching and manipulating data
 const API_URL = "https://api.nestjs-query.refine.dev/graphql";
@@ -76,14 +79,21 @@ function App() {
                 <Route index element={<Home />} />
                 <Route path="/companies" >
                   <Route index element={<CompanyListPage />} />
-                  <Route element={<CreateTask />} path="new" />
+                  <Route element={<CreateCompany />} path="new" />
                   <Route path="edit/:id" element={<EditCompany />} />
 
                 </Route>
-                <Route path="/tasks" >
-                  <Route index element={<TasksList />} />
 
+                <Route path="/tasks" element={<TasksList>
+                  {/* allows to render child routes iside of current route */}
+                  <Outlet />
+                </TasksList>} >
+
+                  <Route path="new" element={<TasksCreatePage />}></Route>
+                  <Route path="edit/:id" element={<TasksEditPage />}></Route>
                 </Route>
+
+
               </Route>
 
             </Routes>

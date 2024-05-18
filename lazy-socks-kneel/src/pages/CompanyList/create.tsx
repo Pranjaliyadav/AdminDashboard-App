@@ -10,7 +10,7 @@ import SelectOptionWithAvatar from '@/components/select-option-with-avatar'
 import { UsersSelectQuery } from '@/graphql/types'
 import { GetFieldsFromList } from '@refinedev/nestjs-query'
 
-const CreateTask = () => {
+const CreateCompany = () => {
 
     const go = useGo()
 
@@ -104,4 +104,4 @@ const CreateTask = () => {
     )
 }
 
-export default CreateTask
+export default CreateCompany
