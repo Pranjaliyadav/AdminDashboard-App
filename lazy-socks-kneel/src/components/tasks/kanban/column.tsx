@@ -1,23 +1,30 @@
 import { Text } from '@/components/text'
 import { PlusOutlined } from '@ant-design/icons'
-import { useDroppable } from '@dnd-kit/core'
+import { useDroppable, UseDroppableArguments } from '@dnd-kit/core'
 import { Badge, Button, Space } from 'antd'
 import React from 'react'
 
-const KanbanColumn = ({ children }: React.PropsWithChildren) => {
+type Props = {
+    id : string,
+    title : string,
+    description? : React.ReactNode,
+    count : number,
+    data?: UseDroppableArguments['data'],
+    onAddClick?: (args : {id : string}) => void
+}
+
+const KanbanColumn = ({ children, id, title, description, count, data, onAddClick }: React.PropsWithChildren<Props>) => {
     //isOver is boolean indicating if any draggable element is currently hovering over any target'
     //fn to pass ref to compoennt you want to make droppable
     //active - holds info of element that is currently being dropped
     const { isOver, setNodeRef, active } = useDroppable({
-        id: '',
-        data: ''
+        id: id,
+        data:data
     })
-    const count = 2
-    const description = 'Description'
-    const title = 'Title'
+   
 
     const onAddClickHandler = () => {
-
+        onAddClick?.({id})
     }
     return (
         <div
